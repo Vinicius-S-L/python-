@@ -1,0 +1,5 @@
+print('Uma loja está em BlackFriday e abaixo os preços de seus produtos em 5%')
+print('Você é respónsavel por colocar os antigos preços na maquina para fazer a conversão automática')
+TV = float(input('Qual é o antigo valor da TV: '))
+sofa = float(input('Qual é preço antigo do sofa: '))
+print('O novo preço da {0} é {2:.2f} e o preço do {1} é {3:.2f}'.format(TV, sofa, TV * 95/100 , sofa * 95/100))
