@@ -38,53 +38,50 @@ pessoa = input("""Qual você escolhe?
 {0}[2]-papel{1}
 {0}[3]-tesoura{1} \n  """.format('\033[7;30;41m', '\033[m'))
 print('\n')
+if pessoa == 'pedra' or pessoa == '1' or pessoa == 'papel' or pessoa == '2' or pessoa == '3' or pessoa == 'tesoura':
+    if bot == 1:
+        if pessoa == 'pedra' or pessoa == '1':
+            print("Opa! Deu Empate!")
+        elif pessoa == 'papel' or pessoa == '2':
+            print("Parabéns! VocÊ ganhou!")
+        elif pessoa == 'tesoura' or pessoa == '3':
+            print('Infelizmente para você, eu ganhei ')
 
-if bot == 1:
-    if pessoa == 'pedra' or pessoa == '1':
-        print("Opa! Deu Empate!")
-    elif pessoa == 'papel' or pessoa == '2':
-        print("Parabéns! VocÊ ganou!")
-    elif pessoa == 'tesoura' or pessoa == '3':
-        print('Infelizmente para você, eu ganhei ')
-    else:
-        print("Opção invalida!")
+    if bot == 2:
+        if pessoa == 'pedra' or pessoa == '1':
+            print('Infelizmente para você, eu ganhei ')
+        elif pessoa == 'papel' or pessoa == '2':
+            print("Opa! Deu Empate!")
+        elif pessoa == 'tesoura' or pessoa == '3':
+            print("Parabéns! VocÊ ganhou!")
 
-if bot == 2:
-    if pessoa == 'pedra' or pessoa == '1':
-        print('Infelizmente para você, eu ganhei ')
-    elif pessoa == 'papel' or pessoa == '2':
-        print("Opa! Deu Empate!")
-    elif pessoa == 'tesoura' or pessoa == '3':
-        print("Parabéns! VocÊ ganou!")
-    else:
-        print("Opção invalida!")
+    if bot == 3:
+        if pessoa == 'pedra' or pessoa == '1':
+            print("Parabéns! VocÊ ganhou!")
+        elif pessoa == 'papel' or pessoa == '2':
+            print('Infelizmente para você, eu ganhei ')
+        elif pessoa == 'tesoura' or pessoa == '3':
+            print("Opa! Deu Empate!")
 
-if bot == 3:
-    if pessoa == 'pedra' or pessoa == '1':
-        print("Parabéns! VocÊ ganou!")
-    elif pessoa == 'papel' or pessoa == '2':
-        print('Infelizmente para você, eu ganhei ')
-    elif pessoa == 'tesoura' or pessoa == '3':
-        print("Opa! Deu Empate!")
-    else:
-        print("Opção invalida!")
+        print('\n')
 
-print('\n')
+    # agora faz a verificação se é um número(int) ou uma palavra(str) para mostra os resultados que o bot e o jogador escolheram
 
-print('{}{}{}'.format('\033[1;34;40m', '___'*20, '\033[m'))
-if pessoa.isnumeric() and pessoa in ['1', '2', '3']:
-    pessoa = int(pessoa)
-    print('''\nResultado da partida:
-    Computador escolheu {0}{2}{1}
-    Jogador escolheu {0}{3}{1}\n'''.format('\033[1;34;40m', '\033[m', opcoes[bot], opcoes[pessoa]))
+    print('{}{}{}'.format('\033[1;34;40m', '___'*20, '\033[m'))
+    if pessoa.isnumeric() and pessoa in ['1', '2', '3']: # aqui verificar o a opção escolhida pelo jogador consegue ser convertido para um numero
+        pessoa = int(pessoa)
+        print('''\nResultado da partida:
+        Computador escolheu {0}{2}{1}
+        Jogador escolheu {0}{3}{1}\n'''.format('\033[1;34;40m', '\033[m', opcoes[bot], opcoes[pessoa]))
 
-if isinstance(pessoa, str):
-    print('''\nResultado da partida:
-    Computador escolheu {0}{2}{1}
-    Jogador escolheu {0}{3}{1}\n'''.format('\033[1;34;40m', '\033[m', opcoes[bot], pessoa))
+    if isinstance(pessoa, str):
+        print('''\nResultado da partida:
+        Computador escolheu {0}{2}{1}
+        Jogador escolheu {0}{3}{1}\n'''.format('\033[1;34;40m', '\033[m', opcoes[bot], pessoa))
 
-print('{}{}{}'.format('\033[1;34;40m', '___'*20, '\033[m'))
+    print('{}{}{}'.format('\033[1;34;40m', '___'*20, '\033[m'))
+else:
+    print('opção invalida!')
+    print('{}{}{}\n'.format('\033[1;34;40m','-='*20, '\033[m'))
 
-print('{}{}{}\n'.format('\033[1;34;40m','-='*20, '\033[m'))
-
-print('{} vamos de novo!{}  '.format('\033[7;34;40m','\033[m'))
+print('\n{} vamos de novo!{}  '.format('\033[7;34;40m','\033[m'))
